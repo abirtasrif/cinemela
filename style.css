@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #f0f8ff;
+}
+
+.navbar {
+  background-color: rgba(216, 223, 230, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: (20px);
+  z-index: 99;
+}
+
+.carousel {
+  margin-top: 3.5rem;
+}
