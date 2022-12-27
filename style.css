@@ -9,7 +9,7 @@ body {
   background-color: rgba(216, 223, 230, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: (20px);
-  z-index: 99;
+  z-index: 98;
 }
 
 .carousel {
