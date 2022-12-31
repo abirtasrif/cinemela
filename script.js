@@ -138,7 +138,7 @@ const moviesArr = [
     year: 2022,
     ticketPrice: 380,
     posterURL:
-      "https://www.torrentbd.com/posters/oUw3f9JJagihLRybyY7P5wYY11198330.jpg",
+      "https://m.media-amazon.com/images/M/MV5BZjBiOGIyY2YtOTA3OC00YzY1LThkYjktMGRkYTNhNTExY2I2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1013_.jpg",
   },
   {
     title: "Attorney Woo",
@@ -345,7 +345,39 @@ displayMovies();
 
 function displayModal() {
   const bookTickets = document.querySelectorAll(".book-ticket");
-  const modalWindow = document.
+  const modalWindow = document.querySelector(".modal-window");
+
+  for (let i = 0; i < bookTickets.length; i++) {
+    bookTickets[i].addEventListener("click", function () {
+      for (let j = 0; j < moviesArr.length; j++) {
+        if (i === j) {
+          const title = moviesArr[j].title;
+          const year = moviesArr[j].year;
+          const price = moviesArr[j].ticketPrice;
+          const vat = Number((price * 0.07).toFixed(2));
+          const subtotal = price + vat;
+
+          modalWindow.style.opacity = 1;
+          modalWindow.style.visibility = "visible";
+
+          modalWindow.innerHTML = `
+          <span class="close-btn"> ❌ </span>
+          <h2 class="fw-bold mt-3">${title} (${year})</h2>
+          <h5><strong>Price:</strong> ${price}</h5>
+          <h5><strong>VAT</strong> ${vat}</h5>
+          <h3><strong>Subtotal:</strong> ${subtotal}</h3>
+          <button class="btn btn-danger fw-bold mt-4 buy-now">Buy Now</button>
+          `;
+
+          const closeBtn = document.querySelector(".close-btn");
+          closeBtn.addEventListener("click", function () {
+            modalWindow.style.opacity = 0;
+            modalWindow.style.visibility = "hidden";
+          });
+        }
+      }
+    });
+  }
 }
 
 displayModal();
