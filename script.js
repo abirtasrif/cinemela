@@ -342,3 +342,10 @@ function displayMovies() {
   }
 }
 displayMovies();
+
+function displayModal() {
+  const bookTickets = document.querySelectorAll(".book-ticket");
+  const modalWindow = document.
+}
+
+displayModal();
